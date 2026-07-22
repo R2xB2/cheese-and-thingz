@@ -52,9 +52,60 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 revealEls.forEach(el => io.observe(el));
 
+// ===== Board builder (build.html) =====
+const builder = document.getElementById('builder');
+if (builder) {
+  const totalEl = document.getElementById('builderTotal');
+  const reqBtn = document.getElementById('builderRequest');
+
+  function refresh() {
+    let total = 0;
+    const chosen = { size: '', items: [] };
+    const size = builder.querySelector('input[name="size"]:checked');
+    if (size) { total += +size.dataset.price; chosen.size = size.dataset.label + ' — $' + size.dataset.price + ' base'; }
+    builder.querySelectorAll('input[type="checkbox"]:checked').forEach(c => {
+      total += +c.dataset.price;
+      chosen.items.push(c.dataset.label + ' (+$' + c.dataset.price + ')');
+    });
+    totalEl.textContent = '$' + total;
+    builder.querySelectorAll('.opt').forEach(o => {
+      const i = o.querySelector('input');
+      o.classList.toggle('sel', !!(i && i.checked));
+    });
+    builder._chosen = chosen;
+    builder._total = total;
+  }
+
+  builder.addEventListener('change', refresh);
+  refresh();
+
+  reqBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const c = builder._chosen;
+    if (!c.size) { alert('Please choose a board size first!'); return; }
+    let summary = 'BUILD YOUR OWN BOARD\n';
+    summary += 'Size: ' + c.size + '\n';
+    summary += 'Selections:\n';
+    summary += c.items.length ? '- ' + c.items.join('\n- ') : '- (base board only)';
+    summary += '\nEstimated total: $' + builder._total;
+    window.location.href = 'order.html?custom=' + encodeURIComponent(summary);
+  });
+}
+
 // ===== Inquiry form (Formspree AJAX) — only on the Order page =====
 const form = document.getElementById('inquiryForm');
 const status = document.getElementById('formStatus');
+
+// Prefill the order form from the board builder (?custom=...)
+if (form) {
+  const custom = new URLSearchParams(window.location.search).get('custom');
+  if (custom) {
+    const details = form.querySelector('[name="details"]');
+    if (details) details.value = custom;
+    const sel = form.querySelector('[name="board"]');
+    if (sel) sel.value = 'Build Your Own Board';
+  }
+}
 
 if (form) form.addEventListener('submit', async (e) => {
   // If the Formspree endpoint hasn't been set up yet, fall back to email.

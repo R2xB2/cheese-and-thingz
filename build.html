@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Build Your Own Board — Cheese and Thingz</title>
+  <meta name="description" content="Design your own custom charcuterie board — pick your size, choose your cheeses, meats, and extras, and see your price update live. Cheese and Thingz, East Dundee, IL." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Build Your Own Board — Cheese and Thingz" />
+  <meta property="og:description" content="Design your own custom charcuterie board — pick your size, choose ingredients, and see your price update live." />
+  <meta property="og:image" content="https://R2xB2.github.io/cheese-and-thingz/assets/logo.png" />
+  <meta property="og:url" content="https://R2xB2.github.io/cheese-and-thingz/build.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Build Your Own Board — Cheese and Thingz" />
+  <meta name="twitter:description" content="Design your own custom charcuterie board and see your price update live." />
+  <meta name="twitter:image" content="https://R2xB2.github.io/cheese-and-thingz/assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/logo.png" />
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <a href="index.html" class="nav__brand">
+      <img src="assets/logo.png" alt="Cheese and Thingz logo" class="nav__logo" onerror="this.style.display='none'" />
+      <span class="nav__name">Cheese and Thingz</span>
+    </a>
+    <nav class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="boards.html" aria-current="page">Boards</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="how-it-works.html">How it Works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="order.html" class="nav__cta">Order a Board</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu">☰</button>
+  </header>
+
+  <section class="pagehero">
+    <div class="pagehero__inner">
+      <p class="hero__eyebrow">Build Your Own</p>
+      <h1>Design your dream board.</h1>
+      <p class="pagehero__sub">Pick your size, choose your favorites, and watch your board come together. Your estimate updates as you go.</p>
+    </div>
+  </section>
+
+  <div class="punbar">You do you — we'll do the <span>cheese</span>.</div>
+
+  <section class="section builder" id="builder">
+
+    <!-- Base included note -->
+    <p class="builder__included">✦ Every board includes the wooden board &amp; styling, artisan crackers &amp; fresh bread, seasonal fruit, honey, and garnishes. Just add your favorites below!</p>
+
+    <!-- Step 1: Size -->
+    <div class="builder__step">
+      <h2>1 · Choose your size</h2>
+      <p class="builder__hint">This sets your base price. We'll scale portions to match.</p>
+      <div class="size-grid">
+        <label class="size">
+          <input type="radio" name="size" data-price="35" data-label="Small board (serves 1–2)" />
+          <span class="size__card"><h3>Small</h3><span class="serves">Serves 1–2</span><span class="base">$35</span></span>
+        </label>
+        <label class="size">
+          <input type="radio" name="size" data-price="70" data-label="Medium board (serves 4–6)" checked />
+          <span class="size__card"><h3>Medium</h3><span class="serves">Serves 4–6</span><span class="base">$70</span></span>
+        </label>
+        <label class="size">
+          <input type="radio" name="size" data-price="130" data-label="Large board (serves 8–12)" />
+          <span class="size__card"><h3>Large</h3><span class="serves">Serves 8–12</span><span class="base">$130</span></span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Step 2: Cheeses -->
+    <div class="builder__step">
+      <h2>2 · Choose your cheeses</h2>
+      <p class="builder__hint">We suggest 2–4. Pick your favorites (+$7 each).</p>
+      <div class="opt-grid">
+        <label class="opt"><input type="checkbox" data-price="7" data-label="Brie" /><span class="opt__body"><span class="opt__name">Brie</span><span class="opt__desc">Soft, buttery &amp; classic</span></span><span class="opt__price">+$7</span></label>
+        <label class="opt"><input type="checkbox" data-price="7" data-label="Aged Cheddar" /><span class="opt__body"><span class="opt__name">Aged Cheddar</span><span class="opt__desc">Sharp &amp; crumbly</span></span><span class="opt__price">+$7</span></label>
+        <label class="opt"><input type="checkbox" data-price="7" data-label="Manchego" /><span class="opt__body"><span class="opt__name">Manchego</span><span class="opt__desc">Nutty Spanish sheep's milk</span></span><span class="opt__price">+$7</span></label>
+        <label class="opt"><input type="checkbox" data-price="7" data-label="Herbed Goat Cheese" /><span class="opt__body"><span class="opt__name">Herbed Goat Cheese</span><span class="opt__desc">Creamy &amp; tangy</span></span><span class="opt__price">+$7</span></label>
+        <label class="opt"><input type="checkbox" data-price="7" data-label="Smoked Gouda" /><span class="opt__body"><span class="opt__name">Smoked Gouda</span><span class="opt__desc">Rich &amp; smoky</span></span><span class="opt__price">+$7</span></label>
+        <label class="opt"><input type="checkbox" data-price="7" data-label="Blue Cheese" /><span class="opt__body"><span class="opt__name">Blue Cheese</span><span class="opt__desc">Bold &amp; savory</span></span><span class="opt__price">+$7</span></label>
+      </div>
+    </div>
+
+    <!-- Step 3: Meats -->
+    <div class="builder__step">
+      <h2>3 · Choose your cured meats</h2>
+      <p class="builder__hint">We suggest 2–3 (+$7 each).</p>
+      <div class="opt-grid">
+        <label class="opt"><input type="checkbox" data-price="7" data-label="Prosciutto" /><span class="opt__body"><span class="opt__name">Prosciutto</span><span class="opt__desc">Delicate dry-cured ham</span></span><span class="opt__price">+$7</span></label>
+        <label class="opt"><input type="checkbox" data-price="7" data-label="Genoa Salami" /><span class="opt__body"><span class="opt__name">Genoa Salami</span><span class="opt__desc">Classic &amp; savory</span></span><span class="opt__price">+$7</span></label>
+        <label class="opt"><input type="checkbox" data-price="7" data-label="Soppressata" /><span class="opt__body"><span class="opt__name">Soppressata</span><span class="opt__desc">Spicy Italian dry salami</span></span><span class="opt__price">+$7</span></label>
+        <label class="opt"><input type="checkbox" data-price="7" data-label="Capicola" /><span class="opt__body"><span class="opt__name">Capicola</span><span class="opt__desc">Tender &amp; lightly spiced</span></span><span class="opt__price">+$7</span></label>
+      </div>
+    </div>
+
+    <!-- Step 4: Sweet extras -->
+    <div class="builder__step">
+      <h2>4 · Sweet extras</h2>
+      <p class="builder__hint">A little something sweet (+$4 each).</p>
+      <div class="opt-grid">
+        <label class="opt"><input type="checkbox" data-price="4" data-label="Local Honey" /><span class="opt__body"><span class="opt__name">Local Honey</span><span class="opt__desc">Drizzle-ready &amp; golden</span></span><span class="opt__price">+$4</span></label>
+        <label class="opt"><input type="checkbox" data-price="4" data-label="Fig Jam" /><span class="opt__body"><span class="opt__name">Fig Jam</span><span class="opt__desc">Sweet &amp; jammy</span></span><span class="opt__price">+$4</span></label>
+        <label class="opt"><input type="checkbox" data-price="4" data-label="Dark Chocolate" /><span class="opt__body"><span class="opt__name">Dark Chocolate</span><span class="opt__desc">Rich squares</span></span><span class="opt__price">+$4</span></label>
+        <label class="opt"><input type="checkbox" data-price="4" data-label="Chocolate-Dipped Strawberries" /><span class="opt__body"><span class="opt__name">Chocolate-Dipped Strawberries</span><span class="opt__desc">A crowd favorite</span></span><span class="opt__price">+$4</span></label>
+      </div>
+    </div>
+
+    <!-- Step 5: Savory extras -->
+    <div class="builder__step">
+      <h2>5 · Savory extras</h2>
+      <p class="builder__hint">Crunch, brine &amp; bite (+$4 each).</p>
+      <div class="opt-grid">
+        <label class="opt"><input type="checkbox" data-price="4" data-label="Marcona Almonds" /><span class="opt__body"><span class="opt__name">Marcona Almonds</span><span class="opt__desc">Buttery Spanish almonds</span></span><span class="opt__price">+$4</span></label>
+        <label class="opt"><input type="checkbox" data-price="4" data-label="Castelvetrano Olives" /><span class="opt__body"><span class="opt__name">Castelvetrano Olives</span><span class="opt__desc">Mild &amp; buttery</span></span><span class="opt__price">+$4</span></label>
+        <label class="opt"><input type="checkbox" data-price="4" data-label="Cornichons" /><span class="opt__body"><span class="opt__name">Cornichons</span><span class="opt__desc">Crisp little pickles</span></span><span class="opt__price">+$4</span></label>
+        <label class="opt"><input type="checkbox" data-price="4" data-label="Candied Nuts" /><span class="opt__body"><span class="opt__name">Candied Nuts</span><span class="opt__desc">Sweet &amp; crunchy</span></span><span class="opt__price">+$4</span></label>
+      </div>
+    </div>
+
+    <!-- Step 6: Finishing touches -->
+    <div class="builder__step">
+      <h2>6 · Finishing touches</h2>
+      <p class="builder__hint">Make it extra special (+$6 each).</p>
+      <div class="opt-grid">
+        <label class="opt"><input type="checkbox" data-price="6" data-label="Edible Flowers" /><span class="opt__body"><span class="opt__name">Edible Flowers</span><span class="opt__desc">Beautiful &amp; on-brand</span></span><span class="opt__price">+$6</span></label>
+        <label class="opt"><input type="checkbox" data-price="6" data-label="Fresh Berry Crown" /><span class="opt__body"><span class="opt__name">Fresh Berry Crown</span><span class="opt__desc">A cascade of berries</span></span><span class="opt__price">+$6</span></label>
+        <label class="opt"><input type="checkbox" data-price="6" data-label="Custom Gift Note" /><span class="opt__body"><span class="opt__name">Custom Gift Note</span><span class="opt__desc">A handwritten message</span></span><span class="opt__price">+$6</span></label>
+        <label class="opt"><input type="checkbox" data-price="6" data-label="Pairing Card" /><span class="opt__body"><span class="opt__name">Wine &amp; Cider Pairing Card</span><span class="opt__desc">What to sip alongside</span></span><span class="opt__price">+$6</span></label>
+      </div>
+    </div>
+
+    <!-- Sticky total -->
+    <div class="totalbar">
+      <div>
+        <div class="totalbar__label">Your estimated total</div>
+        <div class="totalbar__amt" id="builderTotal">$70</div>
+      </div>
+      <a href="#" class="btn btn--primary" id="builderRequest">Request This Board →</a>
+    </div>
+    <p class="builder__disclaimer">This is an estimate — we'll confirm the final quote &amp; details when we reach out. A 50% deposit books your date.</p>
+
+  </section>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="nav__name">Cheese and Thingz</span>
+        <p>Artisan charcuterie · EST 2020<br />East Dundee, IL &amp; NW Chicago suburbs</p>
+      </div>
+      <div class="footer__links">
+        <a href="about.html">About</a>
+        <a href="boards.html">Boards</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="faq.html">FAQ</a>
+        <a href="order.html">Order</a>
+      </div>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/cheeseandthingz" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="mailto:hello@cheeseandthingz.com">Email</a>
+      </div>
+    </div>
+    <p class="footer__fine">© <span id="year"></span> Cheese and Thingz · Made with love &amp; good cheese.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
