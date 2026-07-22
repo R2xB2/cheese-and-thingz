@@ -103,6 +103,33 @@ img { max-width: 100%; display: block; }
   font-size: 1.6rem; cursor: pointer;
 }
 
+/* ===== Boards dropdown ===== */
+.nav__item--drop { position: relative; display: inline-flex; align-items: center; padding-bottom: 0.5rem; margin-bottom: -0.5rem; }
+.nav__droptoggle { display: inline-flex; align-items: center; gap: 0.35rem; }
+.nav__caret { font-size: 0.6em; transition: transform 0.25s ease; }
+.nav__item--drop:hover .nav__caret,
+.nav__item--drop:focus-within .nav__caret { transform: rotate(180deg); }
+.nav__menu {
+  position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  display: flex; flex-direction: column; gap: 0.15rem;
+  min-width: 190px; padding: 0.5rem; border-radius: 14px;
+  background: rgba(87,79,92,0.98); backdrop-filter: blur(8px);
+  box-shadow: 0 18px 44px -18px rgba(0,0,0,0.65);
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s ease; z-index: 300;
+}
+.nav__item--drop:hover .nav__menu,
+.nav__item--drop:focus-within .nav__menu {
+  opacity: 1; visibility: visible; pointer-events: auto;
+  transform: translateX(-50%) translateY(6px);
+}
+.nav__menu a {
+  padding: 0.6rem 0.95rem; border-radius: 9px; white-space: nowrap;
+  text-transform: none !important; letter-spacing: 0.02em; font-size: 0.92rem;
+}
+.nav__menu a:hover { background: rgba(246,241,234,0.12); }
+
 /* ===== Hero ===== */
 .hero {
   position: relative; min-height: 100vh;
@@ -392,9 +419,29 @@ img { max-width: 100%; display: block; }
 .footer__links a:hover, .footer__social a:hover { color: var(--rose); }
 .footer__fine { text-align: center; margin-top: 1.5rem; font-size: 0.82rem; color: rgba(246,241,234,0.55); }
 
-/* ===== Reveal animation ===== */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+/* ===== Reveal animation (scroll) ===== */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.2,0.7,0.2,1), transform 0.8s cubic-bezier(0.2,0.7,0.2,1); }
 .reveal.is-in { opacity: 1; transform: none; }
+
+/* ===== Page-load entrance (Apple-style fade-up) ===== */
+@keyframes riseIn { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+.hero__inner > *, .pagehero__inner > * { animation: riseIn 0.9s cubic-bezier(0.2,0.7,0.2,1) both; }
+.hero__inner > *:nth-child(1) { animation-delay: 0.06s; }
+.hero__inner > *:nth-child(2) { animation-delay: 0.14s; }
+.hero__inner > *:nth-child(3) { animation-delay: 0.22s; }
+.hero__inner > *:nth-child(4) { animation-delay: 0.30s; }
+.hero__inner > *:nth-child(5) { animation-delay: 0.38s; }
+.hero__inner > *:nth-child(6) { animation-delay: 0.46s; }
+.garnish--hero { animation: riseIn 0.9s cubic-bezier(0.2,0.7,0.2,1) 0.54s both; }
+.pagehero__inner > *:nth-child(1) { animation-delay: 0.06s; }
+.pagehero__inner > *:nth-child(2) { animation-delay: 0.16s; }
+.pagehero__inner > *:nth-child(3) { animation-delay: 0.26s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__inner > *, .pagehero__inner > *, .garnish--hero { animation: none; }
+  .reveal { transition: none; opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
 
 /* ===== Reviews ===== */
 .reviews__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
@@ -509,6 +556,15 @@ img { max-width: 100%; display: block; }
     background: var(--mauve-deep);
   }
   .nav__links.is-open { display: flex; }
+  /* dropdown expands inline within the mobile drawer */
+  .nav__item--drop { flex-direction: column; align-items: center; padding: 0; margin: 0; gap: 0.6rem; }
+  .nav__caret { display: none; }
+  .nav__menu {
+    position: static; opacity: 1; visibility: visible; pointer-events: auto;
+    transform: none; background: transparent; backdrop-filter: none; box-shadow: none;
+    padding: 0; min-width: 0; gap: 0.7rem; align-items: center;
+  }
+  .nav__menu a { font-size: 0.78rem; opacity: 0.8; padding: 0; }
   .nav__toggle { display: block; z-index: 101; }
   .about__grid { grid-template-columns: 1fr; }
   .menu__grid, .how__steps, .explore__grid, .reviews__grid { grid-template-columns: repeat(2, 1fr); }

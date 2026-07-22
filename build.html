@@ -30,7 +30,13 @@
     <nav class="nav__links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="boards.html" aria-current="page">Boards</a>
+      <div class="nav__item nav__item--drop">
+        <a href="boards.html" class="nav__droptoggle" aria-current="page">Boards <span class="nav__caret" aria-hidden="true">▾</span></a>
+        <div class="nav__menu">
+          <a href="boards.html">All Boards</a>
+          <a href="build.html" aria-current="page">Build Your Own</a>
+        </div>
+      </div>
       <a href="gallery.html">Gallery</a>
       <a href="how-it-works.html">How it Works</a>
       <a href="faq.html">FAQ</a>
@@ -60,16 +66,16 @@
       <p class="builder__hint">This sets your base price. We'll scale portions to match.</p>
       <div class="size-grid">
         <label class="size">
-          <input type="radio" name="size" data-price="35" data-label="Small board (serves 1–2)" />
-          <span class="size__card"><h3>Small</h3><span class="serves">Serves 1–2</span><span class="base">$35</span></span>
+          <input type="radio" name="size" data-price="38" data-label="Small board (serves 1–2)" />
+          <span class="size__card"><h3>Small</h3><span class="serves">Serves 1–2</span><span class="base">$38</span></span>
         </label>
         <label class="size">
-          <input type="radio" name="size" data-price="70" data-label="Medium board (serves 4–6)" checked />
-          <span class="size__card"><h3>Medium</h3><span class="serves">Serves 4–6</span><span class="base">$70</span></span>
+          <input type="radio" name="size" data-price="75" data-label="Medium board (serves 4–6)" checked />
+          <span class="size__card"><h3>Medium</h3><span class="serves">Serves 4–6</span><span class="base">$75</span></span>
         </label>
         <label class="size">
-          <input type="radio" name="size" data-price="130" data-label="Large board (serves 8–12)" />
-          <span class="size__card"><h3>Large</h3><span class="serves">Serves 8–12</span><span class="base">$130</span></span>
+          <input type="radio" name="size" data-price="140" data-label="Large board (serves 8–12)" />
+          <span class="size__card"><h3>Large</h3><span class="serves">Serves 8–12</span><span class="base">$140</span></span>
         </label>
       </div>
     </div>
@@ -85,6 +91,10 @@
         <label class="opt"><input type="checkbox" data-price="7" data-label="Herbed Goat Cheese" /><span class="opt__body"><span class="opt__name">Herbed Goat Cheese</span><span class="opt__desc">Creamy &amp; tangy</span></span><span class="opt__price">+$7</span></label>
         <label class="opt"><input type="checkbox" data-price="7" data-label="Smoked Gouda" /><span class="opt__body"><span class="opt__name">Smoked Gouda</span><span class="opt__desc">Rich &amp; smoky</span></span><span class="opt__price">+$7</span></label>
         <label class="opt"><input type="checkbox" data-price="7" data-label="Blue Cheese" /><span class="opt__body"><span class="opt__name">Blue Cheese</span><span class="opt__desc">Bold &amp; savory</span></span><span class="opt__price">+$7</span></label>
+        <label class="opt"><input type="checkbox" data-price="7" data-label="Camembert" /><span class="opt__body"><span class="opt__name">Camembert</span><span class="opt__desc">Earthy &amp; creamy</span></span><span class="opt__price">+$7</span></label>
+        <label class="opt"><input type="checkbox" data-price="8" data-label="Gruyère" /><span class="opt__body"><span class="opt__name">Gruyère</span><span class="opt__desc">Nutty Swiss classic</span></span><span class="opt__price">+$8</span></label>
+        <label class="opt"><input type="checkbox" data-price="7" data-label="Havarti" /><span class="opt__body"><span class="opt__name">Havarti</span><span class="opt__desc">Smooth &amp; mild</span></span><span class="opt__price">+$7</span></label>
+        <label class="opt"><input type="checkbox" data-price="9" data-label="Truffle Cheese" /><span class="opt__body"><span class="opt__name">Truffle Cheese</span><span class="opt__desc">Rich &amp; indulgent</span></span><span class="opt__price">+$9</span></label>
       </div>
     </div>
 
@@ -97,42 +107,66 @@
         <label class="opt"><input type="checkbox" data-price="7" data-label="Genoa Salami" /><span class="opt__body"><span class="opt__name">Genoa Salami</span><span class="opt__desc">Classic &amp; savory</span></span><span class="opt__price">+$7</span></label>
         <label class="opt"><input type="checkbox" data-price="7" data-label="Soppressata" /><span class="opt__body"><span class="opt__name">Soppressata</span><span class="opt__desc">Spicy Italian dry salami</span></span><span class="opt__price">+$7</span></label>
         <label class="opt"><input type="checkbox" data-price="7" data-label="Capicola" /><span class="opt__body"><span class="opt__name">Capicola</span><span class="opt__desc">Tender &amp; lightly spiced</span></span><span class="opt__price">+$7</span></label>
+        <label class="opt"><input type="checkbox" data-price="7" data-label="Chorizo" /><span class="opt__body"><span class="opt__name">Chorizo</span><span class="opt__desc">Smoky Spanish sausage</span></span><span class="opt__price">+$7</span></label>
+        <label class="opt"><input type="checkbox" data-price="7" data-label="Mortadella" /><span class="opt__body"><span class="opt__name">Mortadella</span><span class="opt__desc">Silky &amp; delicate</span></span><span class="opt__price">+$7</span></label>
+        <label class="opt"><input type="checkbox" data-price="8" data-label="Bresaola" /><span class="opt__body"><span class="opt__name">Bresaola</span><span class="opt__desc">Lean air-dried beef</span></span><span class="opt__price">+$8</span></label>
+        <label class="opt"><input type="checkbox" data-price="6" data-label="Pepperoni" /><span class="opt__body"><span class="opt__name">Pepperoni</span><span class="opt__desc">A crowd-pleaser</span></span><span class="opt__price">+$6</span></label>
       </div>
     </div>
 
-    <!-- Step 4: Sweet extras -->
+    <!-- Step 4: Dips & spreads -->
     <div class="builder__step">
-      <h2>4 · Sweet extras</h2>
+      <h2>4 · Dips &amp; spreads</h2>
+      <p class="builder__hint">Something to schmear (+$5 each).</p>
+      <div class="opt-grid">
+        <label class="opt"><input type="checkbox" data-price="5" data-label="Whipped Ricotta &amp; Honey" /><span class="opt__body"><span class="opt__name">Whipped Ricotta &amp; Honey</span><span class="opt__desc">Light &amp; sweet</span></span><span class="opt__price">+$5</span></label>
+        <label class="opt"><input type="checkbox" data-price="5" data-label="Baked Brie" /><span class="opt__body"><span class="opt__name">Baked Brie</span><span class="opt__desc">Warm &amp; gooey</span></span><span class="opt__price">+$5</span></label>
+        <label class="opt"><input type="checkbox" data-price="5" data-label="Roasted Red Pepper Hummus" /><span class="opt__body"><span class="opt__name">Roasted Red Pepper Hummus</span><span class="opt__desc">Smooth &amp; savory</span></span><span class="opt__price">+$5</span></label>
+        <label class="opt"><input type="checkbox" data-price="5" data-label="Spinach &amp; Artichoke Dip" /><span class="opt__body"><span class="opt__name">Spinach &amp; Artichoke Dip</span><span class="opt__desc">Creamy &amp; rich</span></span><span class="opt__price">+$5</span></label>
+      </div>
+    </div>
+
+    <!-- Step 5: Sweet extras -->
+    <div class="builder__step">
+      <h2>5 · Sweet extras</h2>
       <p class="builder__hint">A little something sweet (+$4 each).</p>
       <div class="opt-grid">
         <label class="opt"><input type="checkbox" data-price="4" data-label="Local Honey" /><span class="opt__body"><span class="opt__name">Local Honey</span><span class="opt__desc">Drizzle-ready &amp; golden</span></span><span class="opt__price">+$4</span></label>
         <label class="opt"><input type="checkbox" data-price="4" data-label="Fig Jam" /><span class="opt__body"><span class="opt__name">Fig Jam</span><span class="opt__desc">Sweet &amp; jammy</span></span><span class="opt__price">+$4</span></label>
         <label class="opt"><input type="checkbox" data-price="4" data-label="Dark Chocolate" /><span class="opt__body"><span class="opt__name">Dark Chocolate</span><span class="opt__desc">Rich squares</span></span><span class="opt__price">+$4</span></label>
         <label class="opt"><input type="checkbox" data-price="4" data-label="Chocolate-Dipped Strawberries" /><span class="opt__body"><span class="opt__name">Chocolate-Dipped Strawberries</span><span class="opt__desc">A crowd favorite</span></span><span class="opt__price">+$4</span></label>
+        <label class="opt"><input type="checkbox" data-price="6" data-label="Truffle Honey" /><span class="opt__body"><span class="opt__name">Truffle Honey</span><span class="opt__desc">Luxe &amp; earthy</span></span><span class="opt__price">+$6</span></label>
+        <label class="opt"><input type="checkbox" data-price="4" data-label="Apricot Preserves" /><span class="opt__body"><span class="opt__name">Apricot Preserves</span><span class="opt__desc">Bright &amp; fruity</span></span><span class="opt__price">+$4</span></label>
+        <label class="opt"><input type="checkbox" data-price="4" data-label="Candied Orange" /><span class="opt__body"><span class="opt__name">Candied Orange</span><span class="opt__desc">Zesty &amp; sweet</span></span><span class="opt__price">+$4</span></label>
       </div>
     </div>
 
     <!-- Step 5: Savory extras -->
     <div class="builder__step">
-      <h2>5 · Savory extras</h2>
+      <h2>6 · Savory extras</h2>
       <p class="builder__hint">Crunch, brine &amp; bite (+$4 each).</p>
       <div class="opt-grid">
         <label class="opt"><input type="checkbox" data-price="4" data-label="Marcona Almonds" /><span class="opt__body"><span class="opt__name">Marcona Almonds</span><span class="opt__desc">Buttery Spanish almonds</span></span><span class="opt__price">+$4</span></label>
         <label class="opt"><input type="checkbox" data-price="4" data-label="Castelvetrano Olives" /><span class="opt__body"><span class="opt__name">Castelvetrano Olives</span><span class="opt__desc">Mild &amp; buttery</span></span><span class="opt__price">+$4</span></label>
         <label class="opt"><input type="checkbox" data-price="4" data-label="Cornichons" /><span class="opt__body"><span class="opt__name">Cornichons</span><span class="opt__desc">Crisp little pickles</span></span><span class="opt__price">+$4</span></label>
         <label class="opt"><input type="checkbox" data-price="4" data-label="Candied Nuts" /><span class="opt__body"><span class="opt__name">Candied Nuts</span><span class="opt__desc">Sweet &amp; crunchy</span></span><span class="opt__price">+$4</span></label>
+        <label class="opt"><input type="checkbox" data-price="4" data-label="Sun-Dried Tomatoes" /><span class="opt__body"><span class="opt__name">Sun-Dried Tomatoes</span><span class="opt__desc">Tangy &amp; chewy</span></span><span class="opt__price">+$4</span></label>
+        <label class="opt"><input type="checkbox" data-price="4" data-label="Pistachios" /><span class="opt__body"><span class="opt__name">Pistachios</span><span class="opt__desc">Crunchy &amp; salty</span></span><span class="opt__price">+$4</span></label>
+        <label class="opt"><input type="checkbox" data-price="3" data-label="Rosemary Crackers" /><span class="opt__body"><span class="opt__name">Rosemary Crackers</span><span class="opt__desc">Herby &amp; crisp</span></span><span class="opt__price">+$3</span></label>
       </div>
     </div>
 
     <!-- Step 6: Finishing touches -->
     <div class="builder__step">
-      <h2>6 · Finishing touches</h2>
+      <h2>7 · Finishing touches</h2>
       <p class="builder__hint">Make it extra special (+$6 each).</p>
       <div class="opt-grid">
         <label class="opt"><input type="checkbox" data-price="6" data-label="Edible Flowers" /><span class="opt__body"><span class="opt__name">Edible Flowers</span><span class="opt__desc">Beautiful &amp; on-brand</span></span><span class="opt__price">+$6</span></label>
         <label class="opt"><input type="checkbox" data-price="6" data-label="Fresh Berry Crown" /><span class="opt__body"><span class="opt__name">Fresh Berry Crown</span><span class="opt__desc">A cascade of berries</span></span><span class="opt__price">+$6</span></label>
         <label class="opt"><input type="checkbox" data-price="6" data-label="Custom Gift Note" /><span class="opt__body"><span class="opt__name">Custom Gift Note</span><span class="opt__desc">A handwritten message</span></span><span class="opt__price">+$6</span></label>
         <label class="opt"><input type="checkbox" data-price="6" data-label="Pairing Card" /><span class="opt__body"><span class="opt__name">Wine &amp; Cider Pairing Card</span><span class="opt__desc">What to sip alongside</span></span><span class="opt__price">+$6</span></label>
+        <label class="opt"><input type="checkbox" data-price="5" data-label="Personalized Board Tag" /><span class="opt__body"><span class="opt__name">Personalized Board Tag</span><span class="opt__desc">Names, dates &amp; more</span></span><span class="opt__price">+$5</span></label>
+        <label class="opt"><input type="checkbox" data-price="6" data-label="Sparkling Cider Minis" /><span class="opt__body"><span class="opt__name">Sparkling Cider Minis</span><span class="opt__desc">A little something bubbly</span></span><span class="opt__price">+$6</span></label>
       </div>
     </div>
 
@@ -140,7 +174,7 @@
     <div class="totalbar">
       <div>
         <div class="totalbar__label">Your estimated total</div>
-        <div class="totalbar__amt" id="builderTotal">$70</div>
+        <div class="totalbar__amt" id="builderTotal">$75</div>
       </div>
       <a href="#" class="btn btn--primary" id="builderRequest">Request This Board →</a>
     </div>
