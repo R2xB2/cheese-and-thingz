@@ -309,8 +309,7 @@ img { max-width: 100%; display: block; }
 }
 .byo h3 { font-size: 2.1rem; color: var(--ink); margin-bottom: 0.5rem; }
 .byo__text > p { color: var(--ink-soft); font-size: 1rem; line-height: 1.55; }
-.byo__price { font-family: var(--serif); font-size: 1.25rem; color: var(--ink); margin: 0.9rem 0 1.2rem; }
-.byo__price strong { color: var(--rose-deep); font-size: 1.6rem; }
+.byo__price { font-family: var(--serif); font-style: italic; font-size: 1.1rem; color: var(--rose-deep); margin: 0.9rem 0 1.2rem; }
 .byo__steps { display: grid; gap: 1rem; }
 .byo__step { display: flex; align-items: center; gap: 1rem; }
 .byo__step span {
