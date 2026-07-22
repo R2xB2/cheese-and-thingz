@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Cute baguette">
+  <path d="M22 66 Q30 40 50 40 Q70 40 78 66 Q72 74 50 74 Q28 74 22 66 Z" fill="#e6bd7f" stroke="#cf9a54" stroke-width="3"/>
+  <g stroke="#cf9a54" stroke-width="2.4" stroke-linecap="round" fill="none">
+    <path d="M40 48 l6 6"/><path d="M50 46 l6 6"/><path d="M60 49 l6 6"/>
+  </g>
+  <circle cx="44" cy="62" r="1.7" fill="#7a5326"/>
+  <circle cx="56" cy="62" r="1.7" fill="#7a5326"/>
+  <path d="M45 66 Q50 70 55 66" fill="none" stroke="#7a5326" stroke-width="1.6" stroke-linecap="round"/>
+  <circle cx="39" cy="65" r="2.3" fill="#e79b93" opacity="0.55"/>
+  <circle cx="61" cy="65" r="2.3" fill="#e79b93" opacity="0.55"/>
+</svg>

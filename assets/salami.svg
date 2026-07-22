@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Cute salami slice">
+  <circle cx="50" cy="52" r="34" fill="#e0a9a0" stroke="#c98077" stroke-width="4"/>
+  <circle cx="50" cy="52" r="30" fill="#e8b7af"/>
+  <g fill="#cf8e85">
+    <circle cx="40" cy="42" r="3.4"/><circle cx="60" cy="40" r="2.8"/><circle cx="64" cy="56" r="3.2"/>
+    <circle cx="38" cy="60" r="2.6"/><circle cx="52" cy="66" r="2.4"/><circle cx="55" cy="48" r="2"/>
+  </g>
+  <circle cx="43" cy="50" r="2" fill="#7a4a44"/>
+  <circle cx="57" cy="50" r="2" fill="#7a4a44"/>
+  <path d="M44 58 Q50 64 56 58" fill="none" stroke="#7a4a44" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="38" cy="55" r="2.6" fill="#d98f88" opacity="0.7"/>
+  <circle cx="62" cy="55" r="2.6" fill="#d98f88" opacity="0.7"/>
+</svg>

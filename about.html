@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Cheese and Thingz</title>
+  <meta name="description" content="The story behind Cheese and Thingz — handcrafted artisan charcuterie boards, made fresh with love since 2020." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About — Cheese and Thingz" />
+  <meta property="og:description" content="The story behind Cheese and Thingz — handcrafted artisan charcuterie boards, made fresh with love since 2020." />
+  <meta property="og:image" content="https://R2xB2.github.io/cheese-and-thingz/assets/logo.png" />
+  <meta property="og:url" content="https://R2xB2.github.io/cheese-and-thingz/about.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About — Cheese and Thingz" />
+  <meta name="twitter:description" content="The story behind Cheese and Thingz — handcrafted artisan charcuterie boards, made fresh with love since 2020." />
+  <meta name="twitter:image" content="https://R2xB2.github.io/cheese-and-thingz/assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/logo.png" />
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <a href="index.html" class="nav__brand">
+      <img src="assets/logo.png" alt="Cheese and Thingz logo" class="nav__logo" onerror="this.style.display='none'" />
+      <span class="nav__name">Cheese and Thingz</span>
+    </a>
+    <nav class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="boards.html">Boards</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="how-it-works.html">How it Works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="order.html" class="nav__cta">Order a Board</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu">☰</button>
+  </header>
+
+  <section class="pagehero">
+    <div class="pagehero__inner">
+      <p class="hero__eyebrow">Our Story</p>
+      <h1>A little cheese, a lot of love.</h1>
+      <p class="pagehero__sub">Handcrafted, made fresh, and built to bring people together.</p>
+    </div>
+  </section>
+
+  <div class="punbar">This isn't just a hobby — it's our <span>brie</span> and butter.</div>
+
+  <section class="section">
+    <div class="about__grid">
+      <div class="about__text">
+        <p>Cheese and Thingz started in 2020 as a labor of love — a way to bring people together around a beautiful table. Every board is arranged by hand with carefully sourced cheeses, cured meats, fresh and dried fruit, nuts, honey, and the little "thingz" that make each one special.</p>
+        <p>Whether it's a cozy date night, a bridal shower, a game-day spread, or a grazing table for your next big celebration, we build it fresh and make it unforgettable.</p>
+        <ul class="about__points">
+          <li>Handcrafted &amp; made fresh to order</li>
+          <li>Locally sourced when we can</li>
+          <li>Customized for your occasion &amp; dietary needs</li>
+          <li>Pickup or local delivery</li>
+        </ul>
+      </div>
+      <div class="about__card">
+        <div class="about__badge">
+          <span class="about__badge-est">EST</span>
+          <span class="about__badge-line"></span>
+          <span class="about__badge-year">2020</span>
+        </div>
+        <p class="about__quote">"Grazing is just a fancy word for gathering."</p>
+      </div>
+    </div>
+    <div class="garnish" style="margin-top:3.5rem;">
+      <img src="assets/cheese.svg" alt="cheese" />
+      <img src="assets/grapes.svg" alt="grapes" />
+      <img src="assets/salami.svg" alt="salami" />
+      <img src="assets/strawberry.svg" alt="strawberry" />
+      <img src="assets/honey.svg" alt="honey" />
+    </div>
+
+    <div class="cta-band">
+      <p>Ready to gather around a board of your own?</p>
+      <a href="order.html" class="btn btn--primary">Request a Board</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="nav__name">Cheese and Thingz</span>
+        <p>Artisan charcuterie · EST 2020<br />East Dundee, IL &amp; NW Chicago suburbs</p>
+      </div>
+      <div class="footer__links">
+        <a href="about.html">About</a>
+        <a href="boards.html">Boards</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="faq.html">FAQ</a>
+        <a href="order.html">Order</a>
+      </div>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/cheeseandthingz" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="mailto:hello@cheeseandthingz.com">Email</a>
+      </div>
+    </div>
+    <p class="footer__fine">© <span id="year"></span> Cheese and Thingz · Made with love &amp; good cheese.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

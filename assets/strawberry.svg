@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Cute strawberry">
+  <path d="M50 82 Q26 66 28 44 Q34 34 50 36 Q66 34 72 44 Q74 66 50 82 Z" fill="#d97a7a" stroke="#bf5f5f" stroke-width="3"/>
+  <path d="M50 36 Q40 26 34 28 Q42 30 44 36 Q38 28 50 26 Q62 28 56 36 Q58 30 66 28 Q60 26 50 36 Z" fill="#a9c1a4" stroke="#86a081" stroke-width="1.5"/>
+  <g fill="#fbe9c8"><circle cx="42" cy="50" r="1.4"/><circle cx="54" cy="48" r="1.4"/><circle cx="60" cy="58" r="1.4"/><circle cx="40" cy="62" r="1.4"/><circle cx="52" cy="64" r="1.4"/><circle cx="48" cy="55" r="1.4"/></g>
+  <circle cx="44" cy="54" r="1.8" fill="#5a2e2e"/>
+  <circle cx="56" cy="54" r="1.8" fill="#5a2e2e"/>
+  <path d="M46 60 Q50 64 54 60" fill="none" stroke="#5a2e2e" stroke-width="1.6" stroke-linecap="round"/>
+  <circle cx="40" cy="59" r="2.4" fill="#e79b93" opacity="0.6"/>
+  <circle cx="60" cy="59" r="2.4" fill="#e79b93" opacity="0.6"/>
+</svg>

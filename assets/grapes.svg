@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Cute bunch of grapes">
+  <path d="M52 22 Q58 14 70 16" fill="none" stroke="#86a081" stroke-width="3" stroke-linecap="round"/>
+  <path d="M70 16 Q80 14 78 24 Q72 22 70 16 Z" fill="#a9c1a4"/>
+  <g fill="#9d8fb8" stroke="#7d6f9c" stroke-width="1.2">
+    <circle cx="50" cy="30" r="7"/>
+    <circle cx="41" cy="42" r="7"/><circle cx="50" cy="44" r="7"/><circle cx="59" cy="42" r="7"/>
+    <circle cx="46" cy="55" r="7"/><circle cx="55" cy="55" r="7"/>
+    <circle cx="50" cy="66" r="7"/>
+  </g>
+  <g fill="#c4bad6" opacity="0.7"><circle cx="48" cy="28" r="2"/><circle cx="39" cy="40" r="2"/><circle cx="53" cy="42" r="2"/><circle cx="44" cy="53" r="2"/></g>
+  <circle cx="47" cy="55" r="1.5" fill="#3b3348"/>
+  <circle cx="53" cy="55" r="1.5" fill="#3b3348"/>
+  <path d="M48 59 Q50 61 52 59" fill="none" stroke="#3b3348" stroke-width="1.4" stroke-linecap="round"/>
+</svg>

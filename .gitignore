@@ -1,0 +1,10 @@
+# Private business planning — intentionally kept OUT of this public repo
+BUSINESS_PLAN.md
+business-plan-slides.html
+Cheese-and-Thingz-Business-Plan.pdf
+*.pdf
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp

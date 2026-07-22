@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cheese and Thingz — Artisan Charcuterie Boards</title>
+  <meta name="description" content="Cheese and Thingz — beautiful, generous artisan charcuterie boards and grazing tables for parties, gifts, and events in East Dundee, IL. EST 2020." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Cheese and Thingz — Artisan Charcuterie Boards" />
+  <meta property="og:description" content="Cheese and Thingz — beautiful, generous artisan charcuterie boards and grazing tables for parties, gifts, and events in East Dundee, IL. EST 2020." />
+  <meta property="og:image" content="https://R2xB2.github.io/cheese-and-thingz/assets/logo.png" />
+  <meta property="og:url" content="https://R2xB2.github.io/cheese-and-thingz/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cheese and Thingz — Artisan Charcuterie Boards" />
+  <meta name="twitter:description" content="Cheese and Thingz — beautiful, generous artisan charcuterie boards and grazing tables for parties, gifts, and events in East Dundee, IL. EST 2020." />
+  <meta name="twitter:image" content="https://R2xB2.github.io/cheese-and-thingz/assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/logo.png" />
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <header class="nav" id="nav">
+    <a href="index.html" class="nav__brand">
+      <img src="assets/logo.png" alt="Cheese and Thingz logo" class="nav__logo" onerror="this.style.display='none'" />
+      <span class="nav__name">Cheese and Thingz</span>
+    </a>
+    <nav class="nav__links">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="about.html">About</a>
+      <a href="boards.html">Boards</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="how-it-works.html">How it Works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="order.html" class="nav__cta">Order a Board</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu">☰</button>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="top">
+    <div class="hero__inner">
+      <img src="assets/logo.png" alt="Cheese and Thingz" class="hero__logo" onerror="this.classList.add('is-missing')" />
+      <p class="hero__eyebrow">Artisan Charcuterie · EST 2020</p>
+      <h1 class="hero__title">Boards worth gathering around.</h1>
+      <p class="hero__sub">Beautiful, generous charcuterie boards &amp; grazing tables — handcrafted for parties, gifts, and every occasion in East Dundee &amp; the NW Chicago suburbs.</p>
+      <div class="hero__actions">
+        <a href="order.html" class="btn btn--primary">Request a Board</a>
+        <a href="boards.html" class="btn btn--ghost">See the Menu</a>
+      </div>
+      <p class="hero__pun" id="punRotator">You had me at cheese.</p>
+    </div>
+    <div class="garnish garnish--hero">
+      <img src="assets/cheese.svg" alt="cheese" />
+      <img src="assets/grapes.svg" alt="grapes" />
+      <img src="assets/salami.svg" alt="salami" />
+      <img src="assets/wine.svg" alt="wine" />
+      <img src="assets/strawberry.svg" alt="strawberry" />
+      <img src="assets/honey.svg" alt="honey" />
+      <img src="assets/bread.svg" alt="bread" />
+    </div>
+    <div class="hero__scroll">✦</div>
+  </section>
+
+  <!-- ===== Pun bar ===== -->
+  <div class="punbar">In <span>queso</span> emergency… we've got you covered.</div>
+
+  <!-- ===== Explore ===== -->
+  <section class="section">
+    <div class="section__head">
+      <span class="kicker">Welcome</span>
+      <h2>A little cheese, a lot of love.</h2>
+      <p class="section__lead">Every board is arranged by hand with carefully sourced cheeses, cured meats, fresh fruit, and the little "thingz" that make each one special. Explore what we do.</p>
+    </div>
+    <div class="explore__grid">
+      <a href="boards.html" class="explore__card">
+        <h3>Our Boards</h3>
+        <p>From personal boxes to full grazing tables.</p>
+        <span class="explore__more">View menu →</span>
+      </a>
+      <a href="gallery.html" class="explore__card">
+        <h3>Gallery</h3>
+        <p>Feast your eyes on our latest spreads.</p>
+        <span class="explore__more">See photos →</span>
+      </a>
+      <a href="how-it-works.html" class="explore__card">
+        <h3>How it Works</h3>
+        <p>From your first inquiry to the gathering.</p>
+        <span class="explore__more">Learn more →</span>
+      </a>
+      <a href="order.html" class="explore__card explore__card--cta">
+        <h3>Order a Board</h3>
+        <p>Tell us about your occasion.</p>
+        <span class="explore__more">Start here →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== Occasions ===== -->
+  <section class="section occasions">
+    <div class="section__head">
+      <span class="kicker">Perfect For</span>
+      <h2>Any reason to gather.</h2>
+      <p class="section__lead">Big celebration or a cozy night in — there's a board for that.</p>
+    </div>
+    <div class="occasions__grid">
+      <div class="occasion"><img src="assets/strawberry.svg" alt="" /><span>Birthdays</span></div>
+      <div class="occasion"><img src="assets/grapes.svg" alt="" /><span>Showers</span></div>
+      <div class="occasion"><img src="assets/salami.svg" alt="" /><span>Game Day</span></div>
+      <div class="occasion"><img src="assets/wine.svg" alt="" /><span>Date Night</span></div>
+      <div class="occasion"><img src="assets/cheese.svg" alt="" /><span>Corporate Gifts</span></div>
+      <div class="occasion"><img src="assets/honey.svg" alt="" /><span>Holidays</span></div>
+    </div>
+  </section>
+
+  <!-- ===== Reviews ===== -->
+  <section class="section reviews">
+    <div class="section__head">
+      <span class="kicker">Kind Words</span>
+      <h2>Grate reviews.</h2>
+      <p class="section__lead">A few words from happy grazers. <em>(Placeholder quotes — swap in real customer reviews; see the README.)</em></p>
+    </div>
+    <div class="reviews__grid">
+      <blockquote class="review">
+        <div class="review__stars">★★★★★</div>
+        <p>"Absolutely stunning board — it was the centerpiece of the whole party and tasted even better than it looked!"</p>
+        <cite>— Happy Customer, Birthday</cite>
+      </blockquote>
+      <blockquote class="review">
+        <div class="review__stars">★★★★★</div>
+        <p>"Ordering was so easy and the grazing table blew our guests away. Cheese and Thingz is my go-to now."</p>
+        <cite>— Bridal Shower Host</cite>
+      </blockquote>
+      <blockquote class="review">
+        <div class="review__stars">★★★★★</div>
+        <p>"Beautiful, generous, and delicious. You can taste the love that goes into every board."</p>
+        <cite>— Repeat Customer</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="nav__name">Cheese and Thingz</span>
+        <p>Artisan charcuterie · EST 2020<br />East Dundee, IL &amp; NW Chicago suburbs</p>
+      </div>
+      <div class="footer__links">
+        <a href="about.html">About</a>
+        <a href="boards.html">Boards</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="faq.html">FAQ</a>
+        <a href="order.html">Order</a>
+      </div>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/cheeseandthingz" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="mailto:hello@cheeseandthingz.com">Email</a>
+      </div>
+    </div>
+    <p class="footer__fine">© <span id="year"></span> Cheese and Thingz · Made with love &amp; good cheese.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
