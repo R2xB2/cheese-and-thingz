@@ -538,17 +538,24 @@ img { max-width: 100%; display: block; }
 /* per-item shape picker (revealed when the item is selected) */
 .opt-wrap { display: flex; flex-direction: column; }
 .opt__shape {
-  display: none; align-items: center; gap: 0.6rem;
-  padding: 0.7rem 1.1rem 0.2rem 3rem;
+  display: none; flex-direction: column; align-items: flex-start; gap: 0.5rem;
+  padding: 0.7rem 1.1rem 0.4rem 3rem;
 }
 .opt-wrap.show-shape .opt__shape { display: flex; }
-.opt__shape-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-soft); flex: none; }
-.opt__shape select {
-  font-family: var(--sans); font-size: 0.9rem; color: var(--ink);
-  padding: 0.4rem 0.7rem; border-radius: 9px; border: 1.5px solid rgba(207,142,133,0.5);
-  background: #fff; cursor: pointer; max-width: 100%;
+.opt__shape-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-soft); }
+.shape-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.chip {
+  display: inline-flex; flex-direction: column; align-items: center; gap: 0.22rem;
+  width: 66px; padding: 0.45rem 0.3rem; cursor: pointer;
+  border: 1.5px solid rgba(111,103,114,0.18); border-radius: 11px; background: #fff;
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
 }
-.opt__shape select:focus { outline: none; border-color: var(--rose-deep); }
+.chip input { position: absolute; opacity: 0; pointer-events: none; }
+.chip img { width: 30px; height: 30px; }
+.chip span { font-size: 0.64rem; line-height: 1.1; text-align: center; color: var(--ink-soft); }
+.chip:hover { border-color: var(--rose); }
+.chip:has(input:checked) { border-color: var(--rose-deep); background: #fff6f3; box-shadow: 0 6px 16px -12px rgba(60,53,66,0.5); }
+.chip:has(input:checked) span { color: var(--rose-deep); }
 
 .totalbar {
   position: sticky; bottom: 0.8rem; z-index: 20; margin-top: 2.2rem;
@@ -588,6 +595,7 @@ img { max-width: 100%; display: block; }
   .whatson__list { grid-template-columns: 1fr; }
   .opt-grid { grid-template-columns: 1fr; }
   .size-grid { grid-template-columns: 1fr; }
+  .opt__shape { padding-left: 1.1rem; }
   .form__row { grid-template-columns: 1fr; }
   .footer__inner { flex-direction: column; }
 }

@@ -66,8 +66,8 @@ if (builder) {
     builder.querySelectorAll('input[type="checkbox"]:checked').forEach(c => {
       total += +c.dataset.price;
       const wrap = c.closest('.opt-wrap');
-      const shapeSel = wrap && wrap.querySelector('select[data-shape]');
-      const shape = shapeSel ? ' — shaped: ' + shapeSel.value : '';
+      const shapeInput = wrap && wrap.querySelector('.shape-chips input:checked');
+      const shape = shapeInput ? ' — shaped: ' + shapeInput.value : '';
       chosen.items.push(c.dataset.label + shape + ' (+$' + c.dataset.price + ')');
     });
     totalEl.textContent = '$' + total;
