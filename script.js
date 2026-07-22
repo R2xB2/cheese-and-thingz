@@ -65,12 +65,20 @@ if (builder) {
     if (size) { total += +size.dataset.price; chosen.size = size.dataset.label + ' — $' + size.dataset.price + ' base'; }
     builder.querySelectorAll('input[type="checkbox"]:checked').forEach(c => {
       total += +c.dataset.price;
-      chosen.items.push(c.dataset.label + ' (+$' + c.dataset.price + ')');
+      const wrap = c.closest('.opt-wrap');
+      const shapeSel = wrap && wrap.querySelector('select[data-shape]');
+      const shape = shapeSel ? ' — shaped: ' + shapeSel.value : '';
+      chosen.items.push(c.dataset.label + shape + ' (+$' + c.dataset.price + ')');
     });
     totalEl.textContent = '$' + total;
     builder.querySelectorAll('.opt').forEach(o => {
       const i = o.querySelector('input');
       o.classList.toggle('sel', !!(i && i.checked));
+    });
+    // reveal the shape picker for each selected cheese/meat
+    builder.querySelectorAll('.opt-wrap').forEach(w => {
+      const i = w.querySelector('input[type="checkbox"]');
+      w.classList.toggle('show-shape', !!(i && i.checked));
     });
     builder._chosen = chosen;
     builder._total = total;

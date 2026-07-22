@@ -535,6 +535,21 @@ img { max-width: 100%; display: block; }
 .opt__desc { color: var(--ink-soft); font-size: 0.82rem; }
 .opt__price { font-family: var(--serif); color: var(--rose-deep); font-size: 1.15rem; white-space: nowrap; }
 
+/* per-item shape picker (revealed when the item is selected) */
+.opt-wrap { display: flex; flex-direction: column; }
+.opt__shape {
+  display: none; align-items: center; gap: 0.6rem;
+  padding: 0.7rem 1.1rem 0.2rem 3rem;
+}
+.opt-wrap.show-shape .opt__shape { display: flex; }
+.opt__shape-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-soft); flex: none; }
+.opt__shape select {
+  font-family: var(--sans); font-size: 0.9rem; color: var(--ink);
+  padding: 0.4rem 0.7rem; border-radius: 9px; border: 1.5px solid rgba(207,142,133,0.5);
+  background: #fff; cursor: pointer; max-width: 100%;
+}
+.opt__shape select:focus { outline: none; border-color: var(--rose-deep); }
+
 .totalbar {
   position: sticky; bottom: 0.8rem; z-index: 20; margin-top: 2.2rem;
   background: linear-gradient(150deg, var(--mauve), var(--mauve-deep)); color: var(--cream);
