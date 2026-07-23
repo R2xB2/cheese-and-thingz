@@ -104,14 +104,27 @@ if (builder) {
 const form = document.getElementById('inquiryForm');
 const status = document.getElementById('formStatus');
 
-// Prefill the order form from the board builder (?custom=...)
+// Prefill the order form from a board detail page (?board=) or the builder (?custom=)
 if (form) {
-  const custom = new URLSearchParams(window.location.search).get('custom');
+  const params = new URLSearchParams(window.location.search);
+  const sel = form.querySelector('[name="board"]');
+  const custom = params.get('custom');
   if (custom) {
     const details = form.querySelector('[name="details"]');
     if (details) details.value = custom;
-    const sel = form.querySelector('[name="board"]');
     if (sel) sel.value = 'Build Your Own Board';
+  }
+  const board = params.get('board');
+  if (board && sel) {
+    const map = {
+      'little-thing': 'The Little Thing (1–2)',
+      'classic': 'The Classic Board (4–6)',
+      'grazing-board': 'The Grazing Board (8–12)',
+      'grazing-table': 'Grazing Table (20+)',
+      'seasonal': 'The Seasonal Board',
+      'build': 'Build Your Own Board'
+    };
+    if (map[board]) sel.value = map[board];
   }
 }
 

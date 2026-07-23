@@ -568,6 +568,34 @@ img { max-width: 100%; display: block; }
 .totalbar .btn { border: none; padding: 0.55rem 1.3rem; font-size: 0.72rem; }
 .builder__disclaimer { text-align: center; color: var(--ink-soft); font-size: 0.85rem; margin-top: 1.2rem; }
 
+/* ===== Board card "view details" link ===== */
+.card__link { display: inline-block; margin-top: 0.9rem; color: var(--rose-deep); font-size: 0.82rem; letter-spacing: 0.06em; }
+.card--feature .card__link { color: var(--rose-tint); }
+.card__link:hover { text-decoration: underline; }
+.seasonal__link { display: inline-block; margin-top: 0.6rem; color: var(--rose-tint); font-size: 0.9rem; letter-spacing: 0.04em; }
+.seasonal__link:hover { text-decoration: underline; }
+
+/* ===== Board detail page ===== */
+.boarddetail__grid { display: grid; grid-template-columns: 1.4fr 0.9fr; gap: 3rem; align-items: start; }
+.boarddetail__main .kicker { display: block; }
+.boarddetail__desc { color: var(--ink-soft); margin: 1rem 0 1.6rem; font-size: 1.06rem; line-height: 1.6; }
+.boarddetail__main .whatson__list { max-width: none; margin: 0; }
+.boarddetail__card {
+  background: linear-gradient(155deg, var(--mauve), var(--mauve-deep)); color: var(--cream);
+  border-radius: var(--radius); padding: 2.4rem 2rem; text-align: center;
+  box-shadow: var(--shadow); position: sticky; top: 6rem;
+}
+.boarddetail__card .garnish { margin: 0 0 1.2rem; }
+.boarddetail__card .garnish img { width: 46px; height: 46px; }
+.boarddetail__price { font-family: var(--serif); font-size: 2.4rem; color: var(--rose-tint); line-height: 1; }
+.boarddetail__serves { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(246,241,234,0.8); margin: 0.4rem 0 1.5rem; }
+.boarddetail__card .btn { width: 100%; border: none; }
+.boarddetail__note { font-size: 0.8rem; color: rgba(246,241,234,0.7); margin-top: 1rem; line-height: 1.4; }
+@media (max-width: 860px) {
+  .boarddetail__grid { grid-template-columns: 1fr; gap: 2rem; }
+  .boarddetail__card { position: static; }
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 860px) {
   .nav { padding: 1rem 1.3rem; }
