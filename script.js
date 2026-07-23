@@ -43,12 +43,37 @@ window.addEventListener('scroll', onScroll, { passive: true });
 // ===== Mobile menu toggle =====
 const toggle = document.getElementById('navToggle');
 const links = document.querySelector('.nav__links');
-toggle.addEventListener('click', () => links.classList.toggle('is-open'));
-// close the mobile drawer when a real nav link is tapped — but NOT the Boards toggle
-links.querySelectorAll('a').forEach(a => {
-  if (a.classList.contains('nav__droptoggle')) return;
-  a.addEventListener('click', () => links.classList.remove('is-open'));
+const rememberBoards = (v) => {
+  try { v ? sessionStorage.setItem('cntBoardsOpen', '1') : sessionStorage.removeItem('cntBoardsOpen'); } catch (e) {}
+};
+
+toggle.addEventListener('click', () => {
+  links.classList.toggle('is-open');
+  if (!links.classList.contains('is-open')) rememberBoards(false); // manual close = done browsing
 });
+
+links.querySelectorAll('a').forEach(a => {
+  if (a.classList.contains('nav__droptoggle')) return; // the Boards toggle is handled below
+  const inDropdown = !!a.closest('.nav__menu');
+  a.addEventListener('click', () => {
+    if (inDropdown) {
+      // picking a board navigates away — remember to reopen the Boards menu on the next page
+      if (window.innerWidth <= 860) rememberBoards(true);
+    } else {
+      rememberBoards(false);
+      links.classList.remove('is-open');
+    }
+  });
+});
+
+// On mobile, if they were just browsing boards, reopen the drawer + Boards dropdown
+try {
+  if (sessionStorage.getItem('cntBoardsOpen') === '1' && window.innerWidth <= 860) {
+    links.classList.add('is-open');
+    const drop = document.querySelector('.nav__item--drop');
+    if (drop) drop.classList.add('is-open');
+  }
+} catch (e) {}
 
 // ===== Click-to-open Boards dropdown (works on desktop AND in the mobile drawer) =====
 document.querySelectorAll('.nav__droptoggle').forEach(t => {
