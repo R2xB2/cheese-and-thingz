@@ -46,34 +46,30 @@ const links = document.querySelector('.nav__links');
 const rememberBoards = (v) => {
   try { v ? sessionStorage.setItem('cntBoardsOpen', '1') : sessionStorage.removeItem('cntBoardsOpen'); } catch (e) {}
 };
+const boardsDrop = document.querySelector('.nav__item--drop');
 
-toggle.addEventListener('click', () => {
+toggle.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const opening = !links.classList.contains('is-open');
   links.classList.toggle('is-open');
-  if (!links.classList.contains('is-open')) rememberBoards(false); // manual close = done browsing
+  // when opening the drawer during board-browsing, pre-expand the Boards dropdown (saves a tap)
+  if (opening && boardsDrop) {
+    try { if (sessionStorage.getItem('cntBoardsOpen') === '1') boardsDrop.classList.add('is-open'); } catch (err) {}
+  }
 });
 
 links.querySelectorAll('a').forEach(a => {
   if (a.classList.contains('nav__droptoggle')) return; // the Boards toggle is handled below
   const inDropdown = !!a.closest('.nav__menu');
   a.addEventListener('click', () => {
+    links.classList.remove('is-open'); // always close the sidebar on navigation
     if (inDropdown) {
-      // picking a board navigates away — remember to reopen the Boards menu on the next page
-      if (window.innerWidth <= 860) rememberBoards(true);
+      if (window.innerWidth <= 860) rememberBoards(true); // keep Boards pre-expanded next time
     } else {
-      rememberBoards(false);
-      links.classList.remove('is-open');
+      rememberBoards(false); // heading elsewhere — stop pre-expanding
     }
   });
 });
-
-// On mobile, if they were just browsing boards, reopen the drawer + Boards dropdown
-try {
-  if (sessionStorage.getItem('cntBoardsOpen') === '1' && window.innerWidth <= 860) {
-    links.classList.add('is-open');
-    const drop = document.querySelector('.nav__item--drop');
-    if (drop) drop.classList.add('is-open');
-  }
-} catch (e) {}
 
 // ===== Click-to-open Boards dropdown (works on desktop AND in the mobile drawer) =====
 document.querySelectorAll('.nav__droptoggle').forEach(t => {
