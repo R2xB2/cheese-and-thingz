@@ -40,14 +40,15 @@ window.addEventListener('scroll', onScroll, { passive: true });
 const toggle = document.getElementById('navToggle');
 const links = document.querySelector('.nav__links');
 toggle.addEventListener('click', () => links.classList.toggle('is-open'));
-links.querySelectorAll('a').forEach(a =>
-  a.addEventListener('click', () => links.classList.remove('is-open'))
-);
+// close the mobile drawer when a real nav link is tapped — but NOT the Boards toggle
+links.querySelectorAll('a').forEach(a => {
+  if (a.classList.contains('nav__droptoggle')) return;
+  a.addEventListener('click', () => links.classList.remove('is-open'));
+});
 
-// ===== Click-to-open Boards dropdown (desktop; hover still works too) =====
+// ===== Click-to-open Boards dropdown (works on desktop AND in the mobile drawer) =====
 document.querySelectorAll('.nav__droptoggle').forEach(t => {
   t.addEventListener('click', (e) => {
-    if (window.innerWidth <= 860) return; // mobile: submenu is already expanded in the drawer
     e.preventDefault();
     e.stopPropagation();
     const item = t.closest('.nav__item--drop');
