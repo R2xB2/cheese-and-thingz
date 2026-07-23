@@ -108,7 +108,8 @@ img { max-width: 100%; display: block; }
 .nav__droptoggle { display: inline-flex; align-items: center; gap: 0.35rem; }
 .nav__caret { font-size: 0.6em; transition: transform 0.25s ease; }
 .nav__item--drop:hover .nav__caret,
-.nav__item--drop:focus-within .nav__caret { transform: rotate(180deg); }
+.nav__item--drop:focus-within .nav__caret,
+.nav__item--drop.is-open .nav__caret { transform: rotate(180deg); }
 .nav__menu {
   position: absolute; top: 100%; left: 50%;
   transform: translateX(-50%) translateY(10px);
@@ -120,7 +121,8 @@ img { max-width: 100%; display: block; }
   transition: opacity 0.22s ease, transform 0.22s ease; z-index: 300;
 }
 .nav__item--drop:hover .nav__menu,
-.nav__item--drop:focus-within .nav__menu {
+.nav__item--drop:focus-within .nav__menu,
+.nav__item--drop.is-open .nav__menu {
   opacity: 1; visibility: visible; pointer-events: auto;
   transform: translateX(-50%) translateY(6px);
 }
@@ -568,12 +570,18 @@ img { max-width: 100%; display: block; }
 .totalbar .btn { border: none; padding: 0.55rem 1.3rem; font-size: 0.72rem; }
 .builder__disclaimer { text-align: center; color: var(--ink-soft); font-size: 0.85rem; margin-top: 1.2rem; }
 
-/* ===== Board card "view details" link ===== */
+/* ===== Board card "view details" link (whole card is clickable) ===== */
+.card { cursor: pointer; }
 .card__link { display: inline-block; margin-top: 0.9rem; color: var(--rose-deep); font-size: 0.82rem; letter-spacing: 0.06em; }
 .card--feature .card__link { color: var(--rose-tint); }
-.card__link:hover { text-decoration: underline; }
+.card:hover .card__link { text-decoration: underline; }
+/* stretched link — makes the entire card clickable */
+.card__link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+
+.seasonal { position: relative; cursor: pointer; }
 .seasonal__link { display: inline-block; margin-top: 0.6rem; color: var(--rose-tint); font-size: 0.9rem; letter-spacing: 0.04em; }
-.seasonal__link:hover { text-decoration: underline; }
+.seasonal:hover .seasonal__link { text-decoration: underline; }
+.seasonal__link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
 
 /* ===== Board detail page ===== */
 .boarddetail__grid { display: grid; grid-template-columns: 1.4fr 0.9fr; gap: 3rem; align-items: start; }

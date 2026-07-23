@@ -44,6 +44,23 @@ links.querySelectorAll('a').forEach(a =>
   a.addEventListener('click', () => links.classList.remove('is-open'))
 );
 
+// ===== Click-to-open Boards dropdown (desktop; hover still works too) =====
+document.querySelectorAll('.nav__droptoggle').forEach(t => {
+  t.addEventListener('click', (e) => {
+    if (window.innerWidth <= 860) return; // mobile: submenu is already expanded in the drawer
+    e.preventDefault();
+    e.stopPropagation();
+    const item = t.closest('.nav__item--drop');
+    const wasOpen = item.classList.contains('is-open');
+    document.querySelectorAll('.nav__item--drop.is-open').forEach(i => i.classList.remove('is-open'));
+    if (!wasOpen) item.classList.add('is-open');
+  });
+});
+// click anywhere else closes an open dropdown
+document.addEventListener('click', () => {
+  document.querySelectorAll('.nav__item--drop.is-open').forEach(i => i.classList.remove('is-open'));
+});
+
 // ===== Scroll reveal =====
 const revealEls = document.querySelectorAll('.section, .card, .gallery__item, .how__steps li');
 revealEls.forEach(el => el.classList.add('reveal'));
