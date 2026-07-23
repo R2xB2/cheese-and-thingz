@@ -282,7 +282,8 @@ img { max-width: 100%; display: block; }
   border: 1px solid rgba(111,103,114,0.08); transition: transform 0.25s, box-shadow 0.25s;
   position: relative;
 }
-.card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.menu__grid .card { transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.6s ease; }
+.menu__grid .card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
 .card--feature { background: linear-gradient(160deg, var(--mauve) 0%, var(--mauve-deep) 100%); color: var(--cream); }
 .card--feature .card__serves, .card--feature .card__desc { color: rgba(246,241,234,0.85); }
 .card--feature .card__price { color: var(--rose-tint); }
