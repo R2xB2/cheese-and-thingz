@@ -107,8 +107,6 @@ img { max-width: 100%; display: block; }
 .nav__item--drop { position: relative; display: inline-flex; align-items: center; padding-bottom: 0.5rem; margin-bottom: -0.5rem; }
 .nav__droptoggle { display: inline-flex; align-items: center; gap: 0.35rem; }
 .nav__caret { font-size: 0.6em; transition: transform 0.25s ease; }
-.nav__item--drop:hover .nav__caret,
-.nav__item--drop:focus-within .nav__caret,
 .nav__item--drop.is-open .nav__caret { transform: rotate(180deg); }
 .nav__menu {
   position: absolute; top: 100%; left: 50%;
@@ -120,8 +118,6 @@ img { max-width: 100%; display: block; }
   opacity: 0; visibility: hidden; pointer-events: none;
   transition: opacity 0.22s ease, transform 0.22s ease; z-index: 300;
 }
-.nav__item--drop:hover .nav__menu,
-.nav__item--drop:focus-within .nav__menu,
 .nav__item--drop.is-open .nav__menu {
   opacity: 1; visibility: visible; pointer-events: auto;
   transform: translateX(-50%) translateY(6px);
