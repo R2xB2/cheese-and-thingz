@@ -122,18 +122,48 @@ if (builder) {
 const form = document.getElementById('inquiryForm');
 const status = document.getElementById('formStatus');
 
-// Prefill the order form from a board detail page (?board=) or the builder (?custom=)
+// ===== Order builder: add one or more boards (any mix) to a single request =====
 if (form) {
-  const params = new URLSearchParams(window.location.search);
-  const sel = form.querySelector('[name="board"]');
-  const custom = params.get('custom');
-  if (custom) {
-    const details = form.querySelector('[name="details"]');
-    if (details) details.value = custom;
-    if (sel) sel.value = 'Build Your Own Board';
-  }
-  const board = params.get('board');
-  if (board && sel) {
+  const orderList = document.getElementById('orderList');
+  const orderField = document.getElementById('orderField');
+  const obBoard = document.getElementById('obBoard');
+  const obQty = document.getElementById('obQty');
+  const obAdd = document.getElementById('obAdd');
+  const orderEmpty = document.getElementById('orderEmpty');
+
+  if (orderList && orderField) {
+    const items = [];
+    const sync = () => {
+      orderField.value = items.map(it => it.qty + ' × ' + it.board).join('\n');
+      if (orderEmpty) orderEmpty.style.display = items.length ? 'none' : '';
+    };
+    const render = () => {
+      orderList.innerHTML = '';
+      items.forEach((it, idx) => {
+        const li = document.createElement('li');
+        const span = document.createElement('span');
+        span.textContent = it.qty + ' × ' + it.board;
+        const rm = document.createElement('button');
+        rm.type = 'button';
+        rm.setAttribute('aria-label', 'Remove');
+        rm.textContent = '✕';
+        rm.addEventListener('click', () => { items.splice(idx, 1); render(); });
+        li.append(span, rm);
+        orderList.appendChild(li);
+      });
+      sync();
+    };
+    const add = (board, qty) => {
+      const q = parseInt(qty, 10) || 1;
+      const existing = items.find(it => it.board === board);
+      if (existing) existing.qty += q;
+      else items.push({ board, qty: q });
+      render();
+    };
+    if (obAdd) obAdd.addEventListener('click', () => add(obBoard.value, obQty.value));
+
+    // Prefill from a board detail page (?board=) or the builder (?custom=)
+    const params = new URLSearchParams(window.location.search);
     const map = {
       'little-thing': 'The Little Thingz (1–2)',
       'classic': 'The Classic Board (4–6)',
@@ -142,7 +172,20 @@ if (form) {
       'seasonal': 'The Seasonal Board',
       'build': 'Build Your Own Board'
     };
-    if (map[board]) sel.value = map[board];
+    const boardParam = params.get('board');
+    if (boardParam && map[boardParam]) add(map[boardParam], 1);
+    const custom = params.get('custom');
+    if (custom) {
+      add('Build Your Own Board', 1);
+      const details = form.querySelector('[name="details"]');
+      if (details) details.value = custom;
+    }
+    render();
+
+    // If they forget to hit "Add", capture the current selection on submit
+    form.addEventListener('submit', () => {
+      if (!items.length && obBoard) orderField.value = (obQty ? obQty.value : '1') + ' × ' + obBoard.value;
+    });
   }
 }
 

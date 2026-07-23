@@ -87,9 +87,11 @@
             <input type="date" name="date" />
           </label>
         </div>
-        <div class="form__row">
-          <label>Which board?
-            <select name="board">
+        <div class="order-builder">
+          <span class="order-builder__label">Your order</span>
+          <p class="order-hint">Add as many boards as you'd like — mix &amp; match different types and quantities!</p>
+          <div class="order-add">
+            <select id="obBoard" aria-label="Board">
               <option>The Little Thingz (1–2)</option>
               <option selected>The Classic Board (4–6)</option>
               <option>The Grazing Board (8–12)</option>
@@ -98,23 +100,20 @@
               <option>Build Your Own Board</option>
               <option>Not sure — help me choose</option>
             </select>
-          </label>
-          <label>How many?
-            <select name="quantity">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6 or more</option>
+            <select id="obQty" aria-label="Quantity">
+              <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
             </select>
-          </label>
+            <button type="button" class="btn btn--primary" id="obAdd">＋ Add</button>
+          </div>
+          <ul class="order-list" id="orderList"></ul>
+          <p class="order-empty" id="orderEmpty">No boards added yet — add one above.</p>
+          <input type="hidden" name="order" id="orderField" />
         </div>
         <label>Occasion
-          <input type="text" name="occasion" placeholder="Birthday, shower, game day…" />
+          <input type="text" name="occasion" placeholder="Celebration, shower, game day…" />
         </label>
         <label>Details &amp; dietary needs
-          <textarea name="details" rows="4" placeholder="Tell us anything — guest count, allergies, favorites, delivery vs. pickup. Ordering more than one or a mix of boards? List each board &amp; quantity here!"></textarea>
+          <textarea name="details" rows="4" placeholder="Tell us anything — guest count, allergies, favorites, delivery vs. pickup, and any special requests!"></textarea>
         </label>
         <button type="submit" class="btn btn--primary form__submit">Send my request</button>
         <p class="form__status" id="formStatus" role="status"></p>
