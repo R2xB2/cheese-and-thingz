@@ -8,3 +8,8 @@ Cheese-and-Thingz-Business-Plan.pdf
 .DS_Store
 Thumbs.db
 *.swp
+
+# Merch kept as local design mockups (not published yet)
+merch.html
+merch-mockups/
+_mock_*.html
