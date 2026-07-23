@@ -21,6 +21,10 @@ if (punEl) {
     "We're on a roll — and a baguette.",
     'In brie we trust.',
     "You're my butter half.",
+    'Say cheese!',
+    'You brie-long here.',
+    'Absolutely fon-due.',
+    'Cheddar days are ahead.',
   ];
   let i = 0;
   setInterval(() => {
