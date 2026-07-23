@@ -578,10 +578,16 @@ img { max-width: 100%; display: block; }
 /* stretched link — makes the entire card clickable */
 .card__link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
 
-.seasonal { position: relative; cursor: pointer; }
+.seasonal { position: relative; cursor: pointer; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.seasonal:hover { transform: translateY(-6px); box-shadow: 0 22px 48px -22px rgba(60,53,66,0.55); }
 .seasonal__link { display: inline-block; margin-top: 0.6rem; color: var(--rose-tint); font-size: 0.9rem; letter-spacing: 0.04em; }
 .seasonal:hover .seasonal__link { text-decoration: underline; }
 .seasonal__link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+
+/* Build Your Own banner — whole box clickable + hover lift */
+.byo { position: relative; cursor: pointer; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.byo:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.byo .btn::after { content: ""; position: absolute; inset: 0; z-index: 1; }
 
 /* ===== Board detail page ===== */
 .boarddetail__grid { display: grid; grid-template-columns: 1.4fr 0.9fr; gap: 3rem; align-items: start; }
