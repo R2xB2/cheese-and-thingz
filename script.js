@@ -134,7 +134,7 @@ if (form) {
   const board = params.get('board');
   if (board && sel) {
     const map = {
-      'little-thing': 'The Little Thing (1–2)',
+      'little-thing': 'The Little Thingz (1–2)',
       'classic': 'The Classic Board (4–6)',
       'grazing-board': 'The Grazing Board (8–12)',
       'grazing-table': 'Grazing Table (20+)',
