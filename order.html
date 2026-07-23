@@ -99,12 +99,22 @@
               <option>Not sure — help me choose</option>
             </select>
           </label>
-          <label>Occasion
-            <input type="text" name="occasion" placeholder="Birthday, shower, game day…" />
+          <label>How many?
+            <select name="quantity">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6 or more</option>
+            </select>
           </label>
         </div>
+        <label>Occasion
+          <input type="text" name="occasion" placeholder="Birthday, shower, game day…" />
+        </label>
         <label>Details &amp; dietary needs
-          <textarea name="details" rows="4" placeholder="Tell us anything — guest count, allergies, favorites, delivery vs. pickup…"></textarea>
+          <textarea name="details" rows="4" placeholder="Tell us anything — guest count, allergies, favorites, delivery vs. pickup. Ordering more than one or a mix of boards? List each board &amp; quantity here!"></textarea>
         </label>
         <button type="submit" class="btn btn--primary form__submit">Send my request</button>
         <p class="form__status" id="formStatus" role="status"></p>
